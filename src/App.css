@@ -6,13 +6,14 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+body {
+  overflow-x: hidden;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 
 .App-header {
   background-color: green;
@@ -28,36 +29,32 @@
 .bg-dark {
   background-color: coral;
 }
-navbar-dark bg-dark navbar-expand-lg{
+navbar-dark bg-dark navbar-expand-lg {
   background-color: coral;
 }
 
-.table{
-
-
+.table {
   margin-top: 100px;
 }
 
 .react-calendar {
   display: flow-root;
   margin: 6% 40%;
-
 }
 
-.containers{
-
+.containers {
   display: flex;
   justify-content: center;
   margin-top: 80px;
 }
 
-.nav-link{
+.nav-link {
   margin-right: 160px;
 }
 
-.edit{
+.edit {
   height: 50px;
-  
+
   margin-left: 45%;
   padding: 2px 4px;
 }
@@ -65,7 +62,7 @@ navbar-dark bg-dark navbar-expand-lg{
   color: #61dafb;
 }
 
-.navbar-dark .navbar-nav .nav-link{
+.navbar-dark .navbar-nav .nav-link {
   font-weight: 500;
   font-family: sans-serif;
   font-style: normal;
@@ -73,22 +70,19 @@ navbar-dark bg-dark navbar-expand-lg{
   /* font-size: larger, */
 }
 
-.apps{
-
+.apps {
   display: flex;
   justify-content: center;
   margin-top: 130px;
 }
 
-.date{
-
+.date {
   display: flex;
   justify-content: center;
   margin-top: 15%;
-
 }
 
-.nb{
+.nb {
   margin: 02px;
 }
 
@@ -96,17 +90,15 @@ navbar-dark bg-dark navbar-expand-lg{
   margin: 0px 72px;
 } */
 
-.app{
+.app {
   display: flex;
   justify-content: center;
   margin-top: 150px;
 }
 
-.navbar-brand{
-
+.navbar-brand {
   margin-right: 80px;
 }
-
 
 @keyframes App-logo-spin {
   from {
