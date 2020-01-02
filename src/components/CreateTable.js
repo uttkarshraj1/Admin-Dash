@@ -38,7 +38,7 @@ export default function CreateTable({ data }) {
 
   return (
     <Paper className={classes.Paper}>
-      <Typography>
+      <Typography component={"span"}>
         <h4 className={classes.heading}>Registered users page view history</h4>
       </Typography>
       <TableContainer>
@@ -59,10 +59,10 @@ export default function CreateTable({ data }) {
               </TableCell>
               <TableCell className={classes.tablehead} align="center">
                 loggedOutTime
-              </TableCell>
-              <TableCell className={classes.tablehead} align="center">
-                location
               </TableCell> */}
+              <TableCell className={classes.tablehead} align="center">
+                frequency
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
