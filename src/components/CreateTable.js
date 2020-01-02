@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -8,11 +8,10 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { Typography } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles({
   table: {
-    // width: "400px",
-    // marginLeft: "295px",
     fontSize: "25px"
   },
   tablehead: {
@@ -28,38 +27,39 @@ const useStyles = makeStyles({
     boxShadow: "0px 5px 10px 0px rgba(0,0,0,0.2)"
   },
   heading: {
-    padding: "15px",
-    fontSize: "20px"
+    fontSize: "20px",
+    textAlign: "center"
+  },
+  btn: {
+    color: "#5a53c5"
   }
 });
 
 export default function CreateTable({ data }) {
   const classes = useStyles();
+  const arrOfPageViews = [];
 
   return (
     <Paper className={classes.Paper}>
-      <Typography component={"span"}>
-        <h4 className={classes.heading}>Registered users page view history</h4>
-      </Typography>
+      <Paper>
+        <Typography component={"span"}>
+          <h4 className={classes.heading}>
+            Registered users page view history
+          </h4>
+        </Typography>
+      </Paper>
+
       <TableContainer>
         <Table className={classes.table} aria-label="simple table">
           <TableHead className={classes.tablehead}>
             <TableRow>
-              {/* <TableCell className={classes.tablehead} align="center">
-                User Id
-              </TableCell> */}
               <TableCell className={classes.tablehead} align="center">
                 Email
               </TableCell>
               <TableCell className={classes.tablehead} align="center">
                 Page View
               </TableCell>
-              {/* <TableCell className={classes.tablehead} align="center">
-                loggedInTime
-              </TableCell>
-              <TableCell className={classes.tablehead} align="center">
-                loggedOutTime
-              </TableCell> */}
+
               <TableCell className={classes.tablehead} align="center">
                 frequency
               </TableCell>
@@ -68,14 +68,6 @@ export default function CreateTable({ data }) {
           <TableBody>
             {data.map(data => (
               <TableRow key={data._id}>
-                {/* <TableCell
-                  className={classes.tableCell}
-                  align="center"
-                  component="th"
-                  scope="row"
-                >
-                  {data._id}
-                </TableCell> */}
                 <TableCell
                   className={classes.tableCell}
                   align="center"
@@ -92,31 +84,22 @@ export default function CreateTable({ data }) {
                 >
                   {data.pageViewCount}
                 </TableCell>
-
-                {/* <TableCell
-                  className={classes.tableCell}
-                  align="center"
-                  component="th"
-                  scope="row"
-                >
-                  {data.loggedInTime}
-                </TableCell>
                 <TableCell
                   className={classes.tableCell}
                   align="center"
                   component="th"
                   scope="row"
                 >
-                  {data.loggedOutTime}
-                </TableCell> */}
-                {/* <TableCell
-                  className={classes.tableCell}
-                  align="center"
-                  component="th"
-                  scope="row"
-                >
-                  {data.location}
-                </TableCell> */}
+                  {data.pageViewCount === 36 ? (
+                    <Button className={classes.btn} variant="outlined">
+                      Frequent
+                    </Button>
+                  ) : (
+                    <Button className={classes.btn} variant="outlined">
+                      Rare
+                    </Button>
+                  )}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

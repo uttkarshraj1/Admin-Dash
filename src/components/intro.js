@@ -31,7 +31,6 @@ export default function Intro() {
 
   return (
     <Paper className={classes.paper}>
-      <h3>{getDate()}</h3>
       <div className={classes.root}>
         <Avatar src="/broken-image.jpg" />
       </div>

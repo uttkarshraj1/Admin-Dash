@@ -11,14 +11,9 @@ function SideNavigation() {
   return (
     <div className="sidebar">
       <h2 className="sidebar-title">Analytics</h2>
-      
-          <a href="dashboard">
-            <i className="Dashboard"></i> Dashboard
-          </a>
-          <a href="user">
-            <i className="Users"></i> Users Profile
-          </a>
-       
+
+      <a href="dashboard">Dashboard</a>
+      <a href="dashboard/user">Users Profile</a>
     </div>
   );
 }
