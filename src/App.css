@@ -9,6 +9,7 @@
 body {
   overflow-x: hidden;
   background: hsla(172, 22%, 92%, 0.1);
+  width: 100%;
 }
 .inline-data-map {
   display: flex;

@@ -6,17 +6,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import io from "socket.io-client";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
+
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles({
   Paper: {
-    // width: "600px",
-    // marginLeft: "250px",
     boxShadow: "0px 5px 10px 0px rgba(0,0,0,0.2)",
-    margin: "40px",
-    // padding: "15px",
+    marginLeft: "40px",
+    marginRight: "40px",
     fontSize: "20px",
     height: "380px",
     textAlign: "center"
@@ -37,7 +34,7 @@ const useStyles = makeStyles({
 
 export default function Graph({ data }) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+
   const [firefox, setFirefox] = useState(0);
   const [chrome, setChrome] = useState(0);
   const [other, setOther] = useState(0);

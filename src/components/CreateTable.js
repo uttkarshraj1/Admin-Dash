@@ -31,13 +31,47 @@ const useStyles = makeStyles({
     textAlign: "center"
   },
   btn: {
-    color: "#5a53c5"
+    color: "#5a53c5",
+    width: 100
   }
 });
 
 export default function CreateTable({ data }) {
   const classes = useStyles();
-  const arrOfPageViews = [];
+
+  const arrOfPageView = [];
+  function frequency(element) {
+    if (data) {
+      data.map(element => arrOfPageView.push(element.pageViewCount));
+    }
+    const min = Math.min(...arrOfPageView);
+
+    const max = Math.max(...arrOfPageView); //39
+
+    const partsOfArray = Math.floor(max / arrOfPageView.length);
+
+    const middle = Math.ceil((max + min) / 2); //20
+
+    if (element >= min && element < middle) {
+      let between = min + middle / 2;
+      console.log(between); //10
+      if (element < between) {
+        return "very rare";
+      } else {
+        return "rare";
+      }
+    } else if (element >= middle && element < max) {
+      let between = (middle + max) / 2;
+      console.log(between); //29.5
+      if (element === between) {
+        return "average";
+      } else if (element < between) {
+        return "frequent";
+      }
+    } else {
+      return "very frequent";
+    }
+  }
 
   return (
     <Paper className={classes.Paper}>
@@ -90,15 +124,9 @@ export default function CreateTable({ data }) {
                   component="th"
                   scope="row"
                 >
-                  {data.pageViewCount === 36 ? (
-                    <Button className={classes.btn} variant="outlined">
-                      Frequent
-                    </Button>
-                  ) : (
-                    <Button className={classes.btn} variant="outlined">
-                      Rare
-                    </Button>
-                  )}
+                  <Button className={classes.btn} variant="outlined">
+                    {frequency(data.pageViewCount)}
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}

@@ -23,11 +23,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Intro() {
   const classes = useStyles();
-  const [date, setDate] = useState("");
-
-  function getDate() {
-    // setDate(new Date());
-  }
 
   return (
     <Paper className={classes.paper}>

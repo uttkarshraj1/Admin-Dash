@@ -5,9 +5,6 @@ import Intro from "./components/intro";
 import Graph from "./components/Graph";
 import CreateTable from "./components/CreateTable";
 import PageView from "./components/PageView";
-import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
-import "./components/CSS/Navbar.css";
 import "./components/CSS/SideNavigation.css";
 import SideNavigation from "./components/SideNavigation";
 import "react-notifications-component/dist/theme.css";
@@ -22,7 +19,6 @@ function App() {
         setData(data);
       });
   }, []);
-  console.log(data);
 
   return (
     <div className="main-dashboard">
